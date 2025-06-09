@@ -1,0 +1,215 @@
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hérodote - Père de l'Histoire</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: "Segoe UI", sans-serif;
+            background: linear-gradient(to bottom, #f5f5f5, #e0f7fa);
+            color: #333;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            position: relative;
+            height: 400px;
+            background: url("https://upload.wikimedia.org/wikipedia/commons/6/6d/Marble_bust_of_Herodotos_MET_DT11742_%28cropped%29.jpg") no-repeat center calc(30% + 20px) / cover;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+            opacity: 0;
+            animation: headerFade 2s ease forwards;
+        }
+
+        @keyframes headerFade {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        section:hover {
+            transform: scale(1.01);
+            transition: all 0.4s ease;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            background-color: transparent;
+            border-radius: 20px;
+        }
+
+        section:hover h2 {
+            color: #004d40;
+            letter-spacing: 1px;
+            transform: translateX(5px);
+            transition: all 0.3s ease;
+        }
+
+        section:hover p {
+            transform: translateX(3px);
+            transition: transform 0.3s ease;
+        }
+
+        header::before {
+            content: "";
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 1;
+        }
+
+        header h1, header p {
+            z-index: 2;
+            margin: 0;
+            animation: slideIn 1.5s ease;
+        }
+
+        header h1 {
+            font-size: 3.5em;
+        }
+
+        header p {
+            font-size: 1.3em;
+            margin-top: 10px;
+            opacity: 0.9;
+        }
+
+        section {
+            padding: 60px 20px;
+            max-width: 900px;
+            margin: auto;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeUp 1s ease forwards;
+        }
+
+        section:nth-of-type(even) {
+            background-color: #ffffffcc;
+            border-radius: 20px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+        }
+
+        h2 {
+            color: #00796b;
+            margin-bottom: 20px;
+            font-size: 2em;
+            border-left: 5px solid #26a69a;
+            padding-left: 10px;
+        }
+
+        .highlight {
+            background-color: #d0f8ce;
+            padding: 15px;
+            border-left: 5px solid #43a047;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            transition: transform 0.3s;
+        }
+
+        .highlight img {
+            height: 100px;
+            border-radius: 10px;
+        }
+
+        .highlight:hover {
+            transform: scale(1.03);
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        ul li {
+            margin-bottom: 10px;
+            list-style: "⭐ ";
+        }
+
+        a.wiki-link {
+            display: inline-block;
+            margin-top: 20px;
+            text-decoration: none;
+            background-color: #00796b;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 30px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        a.wiki-link:hover {
+            background-color: #004d40;
+            transform: scale(1.05);
+        }
+
+        footer {
+            text-align: center;
+            background-color: #1a1a1a;
+            color: white;
+            padding: 20px;
+            font-size: 0.9em;
+            animation: fadeIn 2s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideIn {
+            from { transform: translateY(-30px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        @keyframes fadeUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        section:nth-child(n) {
+            animation-delay: calc(0.3s * var(--i));
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Hérodote</h1>
+    <p>Père de l'Histoire</p>
+</header>
+
+<section style="--i:1;">
+    <h2>Biographie</h2>
+    <p>Hérodote, né vers 484 av. J.-C. à Halicarnasse, était un historien grec souvent appelé le "Père de l'Histoire". Il est surtout connu pour son œuvre majeure, "Les Histoires", un récit de l'ascension de la Perse et des guerres gréco-perses. Ses écrits sont considérés comme les premiers travaux d'histoire occidentale.</p>
+</section>
+
+<section style="--i:2;">
+    <h2>Œuvre majeure</h2>
+    <div class="highlight">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Herodotus_Massimo_Inv124478.jpg/500px-Herodotus_Massimo_Inv124478.jpg" alt="Statue d'Hérodote">
+        <p>Dans "Les Histoires", Hérodote décrit les conflits entre les Grecs et les Perses, ainsi que les coutumes et les géographies des peuples qu'il a rencontrés.</p>
+    </div>
+</section>
+
+<section style="--i:3;">
+    <h2>Héritage</h2>
+    <ul>
+        <li>📜 Auteur de la première grande œuvre narrative historique</li>
+        <li>🌍 A voyagé à travers le monde a la recherche d'informations</li>
+        <li>📖 Son œuvre a influencé les historiens tell que pour les méthodes d'écriture historique</li>
+    </ul>
+</section>
+
+<section style="--i:4;">
+    <h2>Citation</h2>
+    <p><i>"En temps de paix, les fils ensevelissent leurs pères ; en temps de guerre, les pères ensevelissent leurs fils."</i></p>
+    <p><i>Histoires</i></p>
+    <a class="wiki-link" href="https://fr.wikipedia.org/wiki/Hérodote" target="_blank">
+        🔗 Lire sa page Wikipédia
+    </a>
+</section>
+
+<footer>
+    © 2025 - Site hommage à Hérodote pour Mr.R (anonymisé) | Tous droits réservés à CelestYassou
+</footer>
+
+</body>
+</html>
